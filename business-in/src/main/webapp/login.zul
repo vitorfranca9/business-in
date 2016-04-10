@@ -1,0 +1,60 @@
+<?page id="testZul" title="LOGIN - ZK + SPRING SECURITY INTEGRATION"?>
+<window id="loginwin" title="CUSTOM ZK + SPRING SECURITY LOGIN" border="normal" width="500px">
+	<groupbox>
+		<caption>Valid users</caption>
+		<grid>
+			<columns>
+				<column label="username"/>
+				<column label="password"/>
+				<column label="authorities"/>
+			</columns>
+			<rows>
+				<row>
+					rod <label value="1234"/><label value=" ROLE_USER, ROLE_EDITOR"/>
+				</row>
+				<row>
+					dianne <label value="1234"/><label value="ROLE_USER, ROLE_EDITOR"/>
+				</row>
+				<row>
+					scott <label value="1234"/><label value="ROLE_USER"/>
+				</row>
+				<row>
+					peter <label value="1234"/><label value="ROLE_USER"/>
+				</row>
+			</rows>
+		</grid>
+	</groupbox>
+    <!-- this form-login-page form is also used as the
+         form-error-page to ask for a login again. 
+         If authentication fails, Spring Security will put AuthenticationException 
+         into the HttpSession with the attribute key: "SPRING_SECURITY_LAST_EXCEPTION".
+    -->
+         
+    <html style="color:red" if="${not empty param.login_error}">
+      <![CDATA[
+        Your login attempt was not successful, try again.<br/><br/>
+        Reason: ${SPRING_SECURITY_LAST_EXCEPTION.message}
+       ]]>
+    </html>
+
+	<groupbox>
+		<caption>Login</caption>
+		<!-- j_spring_security_check is default post URL processed by Spring Security AuthenticationFilter -->
+		<html:form action="j_spring_security_check" method="POST" 
+			xmlns:html="native">
+    	<grid>
+    		<rows>
+    			<row>User: <textbox id="u" name="j_username"/></row>
+    			<row>Password: <textbox id="p" type="password" name="j_password"/></row>
+    			<row spans="2">
+    				<hbox>
+    					<button type="reset" label="Reset" />
+    					<button type="submit" label="Submit" />
+    				</hbox>
+    			</row>
+    		</rows>
+    	</grid>
+    	</html:form>
+    </groupbox>
+    
+</window>

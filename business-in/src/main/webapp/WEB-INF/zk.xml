@@ -13,4 +13,13 @@
 		<name>org.zkoss.zkmax.tablet.ui.disabled</name>
 		<value>true</value>
 	</library-property>
+	
+	<session-config>
+	    <device-type>ajax</device-type>
+	    <timeout-uri></timeout-uri>
+	</session-config>
+	<error-page>
+		<exception-type>org.springframework.security.access.AccessDeniedException</exception-type>
+		<location>/WEB-INF/errors/handleAccessDenied.zul</location>
+	</error-page>
 </zk>

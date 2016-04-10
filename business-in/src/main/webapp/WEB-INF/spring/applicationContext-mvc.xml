@@ -21,12 +21,15 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
+	<!-- Uncomment and your base-package here: -->	
+	<!-- <context:component-scan base-package="org.springframework.samples.web"/>  -->
    <context:component-scan base-package="org.jboss.spring.quickstarts.greeter.greeter_spring.web" />
 
    <mvc:annotation-driven />
 
-   <bean
-      class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- Example: a logical view name of 'showMessage' is mapped to 
+   			'/WEB-INF/jsp/showMessage.jsp' -->
       <property name="prefix" value="/WEB-INF/views/" />
       <property name="suffix" value=".jsp"></property>
    </bean>
