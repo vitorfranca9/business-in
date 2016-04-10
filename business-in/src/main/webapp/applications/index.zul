@@ -1,21 +1,21 @@
 <?page title="ZK 7 with Bootstrap Demo"?>
 <?component name="button" extends="button" width="44px" height="44px"?>
-<?link rel="stylesheet" type="text/css"	href="/private/bootstrap/css/bootstrap.css" ?>
-<?link rel="stylesheet" type="text/css" href="/private/css/index.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"	href="/applications/bootstrap/css/bootstrap.css" ?>
+<?link rel="stylesheet" type="text/css" href="/applications/css/index.css.dsp" ?>
 <?link rel="stylesheet" type="text/css"
-	href="/private/css/user-nav.css.dsp" ?>
+	href="/applications/css/user-nav.css.dsp" ?>
 <?link rel="stylesheet" type="text/css"
-	href="/private/css/sidebar.css.dsp" ?>
+	href="/applications/css/sidebar.css.dsp" ?>
 <?link rel="stylesheet" type="text/css"
-	href="/private/css/search.css.dsp" ?>
+	href="/applications/css/search.css.dsp" ?>
 <?link rel="stylesheet" type="text/css"
-	href="/private/css/content-header.css.dsp" ?>
+	href="/applications/css/content-header.css.dsp" ?>
 <?link id="theme" rel="stylesheet" type="text/css"
-	href="/private/css/grey.css.dsp"  if="${param.theme eq 'grey' or empty param.theme}"?>
+	href="/applications/css/grey.css.dsp"  if="${param.theme eq 'grey' or empty param.theme}"?>
 <?link id="theme" rel="stylesheet" type="text/css"
-	href="/private/css/red.css.dsp"  if="${param.theme eq 'red'}"?>
+	href="/applications/css/red.css.dsp"  if="${param.theme eq 'red'}"?>
 <?link id="theme" rel="stylesheet" type="text/css"
-	href="/private/css/light-blue.css.dsp"  if="${param.theme eq 'light-blue'}"?>
+	href="/applications/css/light-blue.css.dsp"  if="${param.theme eq 'light-blue'}"?>
 
 <zk xmlns:n="native">
 	<popup id="btntip" sclass="btn-tip" style="margin-top: 10px">
@@ -285,5 +285,25 @@ unicorn = {
 if (zk.ie && zk.ie < 8) {
 	jq.alert("Your browser is not supported, please use the latest one! (IE8+)");
 }
+]]></script>
+<script if='${execution.serverName == "www.zkoss.org" or execution.serverName == "www.potix.com"}'><![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+var gafn = function () {
+if (window._gat) {
+	gafn = null;
+	try {
+		var pageTracker = _gat._getTracker("UA-121377-3");
+		pageTracker._setDomainName("zkoss.org");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+
+	} catch (e) {
+	}
+} else
+	setTimeout(gafn, 1000);
+};
+gafn();
 ]]></script>
 </zk>
