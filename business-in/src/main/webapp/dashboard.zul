@@ -1,0 +1,6 @@
+<?page title="Dashboard" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Dashboard" border="normal" apply="br.com.ative.controller.DashboardController">
+	    <charts id="chart" type="pie" title="Browser market shares at a specific website, 2010"/>
+	</window>
+</zk>

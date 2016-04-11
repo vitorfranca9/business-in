@@ -16,6 +16,9 @@
  */
 package org.jboss.spring.quickstarts.greeter.greeter_spring.web;
 
+import java.util.List;
+
+import org.jboss.spring.quickstarts.greeter.greeter_spring.domain.EntityDAO;
 import org.jboss.spring.quickstarts.greeter.greeter_spring.domain.User;
 import org.jboss.spring.quickstarts.greeter.greeter_spring.domain.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,18 +28,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import br.com.ative.entity.Cliente;
+import br.com.ative.entity.ContaAReceber;
+import br.com.ative.entity.Empresa;
+
 @Controller
 @RequestMapping("greet")
 public class GreetController {
 
     @Autowired
     private UserDao userDao;
+    
+    @Autowired
+    private EntityDAO entityDAO;
 
     @RequestMapping(method = RequestMethod.GET)
     public
     @ModelAttribute("message")
     String getInitialMessage() {
-        return "Enter a valid name";
+//        return "Enter a valid name";
+    	List<Empresa> empresas = entityDAO.findAll(Empresa.class);
+    	List<Cliente> clientes = entityDAO.findAll(Cliente.class);
+    	List<ContaAReceber> contas = entityDAO.findAll(ContaAReceber.class);
+    	return empresas.get(0).getRazao();
     }
 
     @RequestMapping(method = RequestMethod.POST)

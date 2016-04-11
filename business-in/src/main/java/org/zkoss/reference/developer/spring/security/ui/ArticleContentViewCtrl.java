@@ -5,6 +5,7 @@ package org.zkoss.reference.developer.spring.security.ui;
 
 import java.util.Date;
 
+import org.jboss.spring.quickstarts.greeter.greeter_spring.domain.EntityDAO;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.userdetails.User;
 import org.zkoss.reference.developer.spring.security.SecurityUtil;

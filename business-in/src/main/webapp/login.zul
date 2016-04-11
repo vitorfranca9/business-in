@@ -1,5 +1,5 @@
 <?page id="testZul" title="LOGIN - ZK + SPRING SECURITY INTEGRATION"?>
-<window id="loginwin" title="CUSTOM ZK + SPRING SECURITY LOGIN" border="normal" width="500px">
+<window id="loginwin">
 	<groupbox>
 		<caption>Valid users</caption>
 		<grid>

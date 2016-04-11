@@ -8,6 +8,9 @@
 	"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 	 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
 	 http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+	 <!-- xmlns:zkc="http://www.zkoss.org/2008/zkspring/core" xmlns:zksp="http://www.zkoss.org/2008/zkspring/security" -->
+	<!-- http://www.zkoss.org/2008/zkspring/core http://www.zkoss.org/2008/zkspring/core/zkspring-core.xsd
+	 	 http://www.zkoss.org/2008/zkspring/security http://www.zkoss.org/2008/zkspring/security/zkspring-security.xsd -->
 
  	<!--  HTTP configuration sample -->
 	<http auto-config="true">
@@ -74,6 +77,17 @@
 		</authentication-provider>
 	</authentication-manager>
 	 -->
-
+	 
+	 <!-- Securing ZK events -->
+	<!-- <zkc:zk-config>
+	</zkc:zk-config>
+	<zksp:zk-event login-template-close-delay="5">
+		<zksp:intercept-event event="onClick" path="//**/btn_*" access="ROLE_TELLER" />
+		<zksp:intercept-event path="/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		Configuring Ajax popup login
+		<zksp:form-login login-page="/login.zul" />
+	</zksp:zk-event> -->
+	 
+	<!-- pre-post-annotations="enabled" -->
 	<global-method-security secured-annotations="enabled" />
 </beans:beans>

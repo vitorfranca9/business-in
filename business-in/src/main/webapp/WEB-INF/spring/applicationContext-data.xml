@@ -29,6 +29,7 @@
    <!-- Scan the the domain package for Spring repositories and services -->
 	<context:component-scan base-package="org.jboss.spring.quickstarts.greeter.greeter_spring.domain" />
 	<context:component-scan base-package="org.zkoss.reference.developer.spring.security.model"/>
+	<context:component-scan base-package="br.com.ative.entity" />
 	
    <!-- Look up the database in JNDI -->
    <jee:jndi-lookup jndi-name="java:jboss/datasources/BusinessInDS" id="dataSource"

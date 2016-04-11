@@ -1,6 +1,7 @@
 <?page title="Dashboard - ZK Admin"?>
 <!-- Load Bootstrap  -->
 <?link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"?>
+<?link href="bootstrap/css/none.css" rel="stylesheet" type="text/css"?>
 
 <!-- Google Open Sans font -->
 <!-- Load fonts from local -->
